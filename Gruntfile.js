@@ -115,7 +115,7 @@ module.exports = function (grunt) {
     // Load the plugin
     // require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'watch']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'connect', 'watch']);
     // SASSS/Compass compilation only
     grunt.registerTask('compile', ['sass']);
     grunt.registerTask('styleguide', ['kss']);
