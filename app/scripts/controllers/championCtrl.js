@@ -27,7 +27,9 @@ ritoApp.controller('ChampionController', [
           $scope.showContentDelay();
           console.log(data);
         }, function (reason) {
+          console.log(reason);
           $scope.loadingFinished = true;
+          $scope.showContent = true;
         });
     }
 

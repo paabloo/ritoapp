@@ -24,12 +24,10 @@ ritoApp.factory('ChampionsFactory', [
           return data;
         })
         .error(function (data, status, headers, config) {
-          console.log(data);
-          console.log(status);
-          console.log(headers);
-          console.log(config);
           console.error('ChampionsFactory error', data);
-          deferred.reject(data);
+          Env.checkErrorStatus(status);
+          deferred.reject(status);
+          return data;
         })
       return deferred.promise;
     }

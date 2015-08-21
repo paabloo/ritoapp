@@ -28,6 +28,7 @@ ritoApp.service('ChampionsService', [
           return deferred;
         }, function (reason) {
           deferred.reject(reason)
+          return deferred;
         })
       return deferred.promise;
     }
