@@ -4,9 +4,10 @@
 
 ritoApp.controller('ChampionsController', [
   '$scope',
+  '$rootScope',
   '$timeout',
   'ChampionsService',
-  function ($scope, $timeout, ChampionsService) {
+  function ($scope, $rootScope, $timeout, ChampionsService) {
 
     $scope.champ = {};
     $scope.loadingFinished = true;
@@ -48,6 +49,11 @@ ritoApp.controller('ChampionsController', [
     }
 
     $scope.changeDisplayMode = function CC_changeDisplayMode (mode) {
+      if (!$rootScope.communicator.displayMode) {
+        $rootScope.communicator.displayMode = 'list';
+        return;
+      }
+      $rootScope.communicator.displayMode = mode;
       for (var key in $scope.displayMode) {
         $scope.displayMode[key] = false;
       }
@@ -61,5 +67,6 @@ ritoApp.controller('ChampionsController', [
     }
 
     $scope.getChampionsList('');
+    $scope.changeDisplayMode($rootScope.communicator.displayMode);
 
 }])

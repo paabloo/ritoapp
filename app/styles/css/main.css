@@ -454,7 +454,9 @@ body {
    ========================================================================== */
 a {
   text-decoration: none;
-  color: #404040; }
+  color: #404040;
+  -webkit-transition: all 100ms ease-in-out;
+          transition: all 100ms ease-in-out; }
   a:hover {
     text-decoration: underline; }
 
@@ -499,18 +501,33 @@ ul {
 .hidden {
   display: none; }
 
-.data--list .item {
-  line-height: 40px; }
-  .data--list .item .champ-image {
-    display: block;
-    float: left; }
-  .data--list .item .champ-label {
-    float: left;
-    margin-left: 10px;
-    font-weight: 700; }
-  .data--list .item .champ-link {
-    display: inline-block;
-    text-decoration: none; }
+.data--list {
+  padding: 0 20px; }
+  .data--list .item {
+    height: 60px;
+    line-height: 40px;
+    -webkit-transition: background 100ms ease-in-out;
+            transition: background 100ms ease-in-out; }
+    .data--list .item:hover {
+      background: #404040; }
+    .data--list .item .champ-image {
+      display: block;
+      float: left; }
+    .data--list .item .champ-label {
+      float: left;
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 700; }
+    .data--list .item .champ-link {
+      display: block;
+      text-decoration: none;
+      width: 100%;
+      height: 60px;
+      padding: 10px 0; }
+    .data--list .item + .item {
+      border-top: 1px solid #ccc; }
+    .data--list .item:not(:last-item) {
+      border-bottom: 1px solid #777; }
 
 .data--grid {
   display: flex;
@@ -528,6 +545,21 @@ ul {
 /* ==========================================================================
    Components
    ========================================================================== */
+.champion-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: flex wrap;
+      -ms-flex-flow: flex wrap;
+          flex-flow: flex wrap; }
+
+.displaymode-menu a {
+  opacity: 0.6; }
+  .displaymode-menu a.active,
+  .displaymode-menu a:hover {
+    opacity: 1; }
+
 /* Vendor CSS
    ========================================================================== */
 /* ==========================================================================

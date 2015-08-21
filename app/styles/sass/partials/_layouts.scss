@@ -27,8 +27,14 @@ ul {
 }
 
 .data--list {
+    padding: 0 20px;
     .item {
+        height: 60px;
         line-height: 40px;
+        transition: background 100ms ease-in-out;
+        &:hover {
+            background: #404040;
+        }
         .champ-image {
             display: block;
             float: left;
@@ -36,11 +42,21 @@ ul {
         .champ-label {
             float: left;
             margin-left: 10px;
+            font-size: 16px;
             font-weight: 700;
         }
         .champ-link {
-            display: inline-block;
+            display: block;
             text-decoration: none;
+            width: 100%;
+            height: 60px;
+            padding: 10px 0;
+        }
+        + .item {
+            border-top: 1px solid #ccc;
+        }
+        &:not(:last-item) {
+            border-bottom: 1px solid #777;
         }
     }
 }

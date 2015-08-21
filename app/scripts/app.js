@@ -27,7 +27,8 @@ var ritoApp = angular.module('rito.app', [
           controllerAs: 'CC'
         })
 }])
-.run(['$state',
-  function ($state) {
+.run(['$state', '$rootScope',
+  function ($state, $rootScope) {
     $state.go('homeState');
+    $rootScope.communicator = {}; // used for communication between controllers
 }]);

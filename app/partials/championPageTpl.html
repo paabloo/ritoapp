@@ -1,41 +1,44 @@
 <div ng-show="!loadingFinished || !showContent">
     <img src="images/loader.gif">
 </div>
-<div ng-show="loadingFinished && showContent">
+<div ng-show="loadingFinished && showContent"
+     class="champion-block">
     <img src="images/loader.gif" id="loading-image">
     <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champion.key + '_0.jpg'}}"
          onload="this.className = '';document.getElementById('loading-image').className = 'hidden'"
          onerror="this.src='images/not-found.png'"
-         class="hidden"
+         class="hidden champion-block__main-image"
          ng-if="loadingFinished">
-    <p>
-        <strong>{{champion.name}}</strong><br>
-        <em>{{champion.title}}</em>
-    </p>
-    <table>
-        <tr>
-            <th>HP</th>
-            <td>{{champion.stats.hp}}</td>
-            <th>MP/Energy</th>
-            <td>{{champion.stats.mp}}</td>
-        </tr>
-        <tr>
-            <th>HP per level</th>
-            <td>{{champion.stats.hpperlevel}}</td>
-            <th>MP per level</th>
-            <td>{{champion.stats.mpperlevel}}</td>
-        </tr>
-        <tr>
-            <th>Armor</th>
-            <td>{{champion.stats.armor}}</td>
-            <th>Magic resist</th>
-            <td>{{champion.stats.spellblock}}</td>
-        </tr>
-        <tr>
-            <th>Armor per level</th>
-            <td>{{champion.stats.armorperlevel}}</td>
-            <th>Magic resist per level</th>
-            <td>{{champion.stats.spellblockperlevel}}</td>
-        </tr>
-    </table>
+    <div class="champion-block__description">
+        <p>
+            <strong>{{champion.name}}</strong><br>
+            <em>{{champion.title}}</em>
+        </p>
+        <table>
+            <tr>
+                <th>HP</th>
+                <td>{{champion.stats.hp}}</td>
+                <th>MP/Energy</th>
+                <td>{{champion.stats.mp}}</td>
+            </tr>
+            <tr>
+                <th>HP per level</th>
+                <td>{{champion.stats.hpperlevel}}</td>
+                <th>MP per level</th>
+                <td>{{champion.stats.mpperlevel}}</td>
+            </tr>
+            <tr>
+                <th>Armor</th>
+                <td>{{champion.stats.armor}}</td>
+                <th>Magic resist</th>
+                <td>{{champion.stats.spellblock}}</td>
+            </tr>
+            <tr>
+                <th>Armor per level</th>
+                <td>{{champion.stats.armorperlevel}}</td>
+                <th>Magic resist per level</th>
+                <td>{{champion.stats.spellblockperlevel}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
