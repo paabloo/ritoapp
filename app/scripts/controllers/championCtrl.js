@@ -24,7 +24,7 @@ ritoApp.controller('ChampionController', [
         .then(function (data) {
           $scope.champion = data;
           $scope.loadingFinished = true;
-          $scope.showContentDelay();
+          $scope.showContentWithDelay();
           console.log(data);
         }, function (reason) {
           console.log(reason);
@@ -33,7 +33,7 @@ ritoApp.controller('ChampionController', [
         });
     }
 
-    $scope.showContentDelay = function CC_showContentDelay () {
+    $scope.showContentWithDelay = function CC_showContentWithDelay () {
       $timeout(function () {
         $scope.showContent = true;
       }, 500);

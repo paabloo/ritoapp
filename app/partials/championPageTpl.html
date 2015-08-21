@@ -1,12 +1,13 @@
-<p ng-show="!loadingFinished || !showContent">
+<div ng-show="!loadingFinished || !showContent">
     <img src="images/loader.gif">
-</p>
+</div>
 <div ng-show="loadingFinished && showContent">
-<img src="images/loader.gif" id="loading-image">
-<img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champion.key + '_0.jpg'}}" class="hidden"
-     onload="this.className = '';document.getElementById('loading-image').className = 'hidden'"
-     onerror="this.src='images/not-found.png'"
-     ng-if="loadingFinished">
+    <img src="images/loader.gif" id="loading-image">
+    <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champion.key + '_0.jpg'}}"
+         onload="this.className = '';document.getElementById('loading-image').className = 'hidden'"
+         onerror="this.src='images/not-found.png'"
+         class="hidden"
+         ng-if="loadingFinished">
     <p>
         <strong>{{champion.name}}</strong><br>
         <em>{{champion.title}}</em>

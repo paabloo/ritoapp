@@ -36,13 +36,12 @@ module.exports = function (grunt) {
         watch: {
             // sass compilation
             sass: {
-                files: ['app/styles/sass/*.scss'],
-                // tasks: ['sass', 'autoprefixer']
-                tasks: ['sass']
+                files: ['app/styles/sass/**/*.scss'],
+                tasks: ['sass', 'autoprefixer']
             },
             // enable LiveReload for css files
             css: {
-                files: ['app/styles/css/*.css'],
+                files: ['app/styles/css/main.css'],
                 options: {
                     livereload: 9000
                 }
@@ -105,20 +104,18 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // autoprefixer: {
-        //     dist: {
-        //         files: {
-        //             'static/css/main.css': 'static/css/main.css'
-        //         }
-        //     }
-        // }
+        autoprefixer: {
+            dist: {
+                files: {
+                    'app/styles/css/main.css': 'app/styles/css/main.css'
+                }
+            }
+        }
     });
     // Load the plugin
     // require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'watch']);
-    // grunt.registerTask('default', ['sass', 'connect:server', 'watch']);
-    // grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'watch']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'watch']);
     // SASSS/Compass compilation only
     grunt.registerTask('compile', ['sass']);
     grunt.registerTask('styleguide', ['kss']);
