@@ -19,7 +19,7 @@ body {
 a {
     text-decoration: none;
     color: $color_default;
-    
+    transition: all 100ms ease-in-out;
     &:hover {
         text-decoration: underline;
     }
