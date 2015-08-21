@@ -1,0 +1,18 @@
+<ul class="data--list">
+    <li ng-repeat="chmp in champ.data | filter:{name: champNameFilter.name}"
+        ng-if="loadingFinished && showContent"
+        class="item">
+        <a href="#/champion/{{chmp.id}}"
+           class="champ-link">
+            <img id="champ-image_{{$index}}"
+                 class="champ-image"
+                 ng-src="{{'http://ddragon.leagueoflegends.com/cdn/' + champ.version + '/img/champion/' + chmp.image.full}}"
+                 width="40"
+                 height="40"
+                 onerror="this.src = 'images/not-found.png'">
+                 <!-- loaded-image - search in drc -->
+            <span class="champ-label">{{chmp.name}}</span>
+        </a>
+        <br>
+    </li>
+</ul>

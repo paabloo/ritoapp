@@ -1,0 +1,50 @@
+body {
+    background: #303030;
+    color: white;
+}
+a {
+    color: #eee;
+    &[ng-click] {
+        cursor: pointer;
+    }
+}
+ul {
+    list-style: none;
+}
+.hidden {
+    display: none;
+}
+
+
+.data--list {
+    .item {
+        line-height: 40px;
+        .champ-image {
+            display: block;
+            float: left;
+        }
+        .champ-label {
+            float: left;
+            margin-left: 10px;
+            font-weight: 700;
+        }
+        .champ-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+    }
+}
+
+.data--grid {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    .champ-link {
+        display: block;
+    }
+    .champ-image {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+}

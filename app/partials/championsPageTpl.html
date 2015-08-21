@@ -1,0 +1,14 @@
+<div>
+    <!-- <input type="text" ng-model="champion_id" ng-keyup="checkForReturnKey($event)"> -->
+    <!-- <button ng-click="getChampionsList(champion_id)">check</button> -->
+    <input type="text" ng-model="champNameFilter.name" ng-keyup="checkInput()">
+    <div>
+        <a ng-click="changeDisplayMode('list')"><img src="images/icon_list-01.png"></a>
+        <a ng-click="changeDisplayMode('grid')"><img src="images/icon_grid-01.png"></a>
+    </div>
+    <div ng-if="!loadingFinished || !showContent"><img src="images/loader.gif"></div>
+    <champs-grid ng-if="displayMode.grid"></champs-grid>
+    <champs-list ng-if="displayMode.list"></champs-list>
+
+</div>
+<!-- http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/ -->
