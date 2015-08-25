@@ -36,7 +36,7 @@ ritoApp.controller('ChampionController', [
     $scope.showContentWithDelay = function CC_showContentWithDelay () {
       $timeout(function () {
         $scope.showContent = true;
-      }, 500);
+      }, 0);
     }
 
     $scope.getChampionDetails($scope.champion_id);
