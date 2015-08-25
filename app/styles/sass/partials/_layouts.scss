@@ -9,7 +9,8 @@
 }
 
 body {
-    background: #303030;
+    background: black;
+    display: flex;
     color: white;
 }
 a {
@@ -24,7 +25,6 @@ ul {
 .hidden {
     display: none;
 }
-
 
 .data--list {
     padding: 0 20px;
